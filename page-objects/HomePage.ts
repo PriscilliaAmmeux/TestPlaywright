@@ -9,9 +9,14 @@ export class HomePage {
       .click();
   }
 
-  async searchForItem(searchKeyword: string, searchPlaceholder: string) {
+  async searchForItem(
+    searchKeyword: string,
+    searchPlaceholder: string,
+    itemName: string
+  ) {
     await this.page.getByPlaceholder(searchPlaceholder).click();
     await this.page.getByPlaceholder(searchPlaceholder).fill(searchKeyword);
     await this.page.getByPlaceholder(searchPlaceholder).press("Enter");
+    await this.page.getByRole("link", { name: itemName }).click();
   }
 }
