@@ -48,7 +48,7 @@ git clone git@github.com:PriscilliaAmmeux/TestPlaywright.git
 2. Installez les dépendances :
 
 bash
-cd kiabi-test
+cd TestPlaywright
 npm install
 
 3. Installez les navigateurs pour Playwright :
