@@ -31,32 +31,31 @@ Conditions à respecter pour le test technique
 Toute bonne pratique jugée utile par le candidat (en termes de programmation,
 de testing, de structuration du projet) sera la bienvenue.
 
-# Détails des répertoires
+## Détails des répertoires
 
 - src/pages : Contient les classes Page Object Model pour chaque page (Home, Product, Cart, Delivery, Payment).
 - tests : Contient les fichiers de tests écrits en Playwright.
 - data : Contient les jeux de données externalisés en JSON.
 - playwright.config.ts : Configuration des environnements et des navigateurs pour Playwright.
 
-# Installation
+## Installation
 
-1. Clonez ce dépôt :
+1. **Clonez ce dépôt**
 
-bash
-git clone git@github.com:PriscilliaAmmeux/TestPlaywright.git
+'git clone git@github.com:PriscilliaAmmeux/TestPlaywright.git
 
-2. Installez les dépendances :
+2. **Installez les dépendances**
 
-bash
-cd TestPlaywright
-npm install
+`cd TestPlaywright
+`npm install
 
-3. Installez les navigateurs pour Playwright :
+3. **Installez les navigateurs pour Playwright**
 
-bash
-npx playwright install
+`npx playwright install
 
 ## Exécution des tests
 
-bash
-npx playwright test
+`npx playwright test
+
+Pour voir le report
+`npx playwright show-report
