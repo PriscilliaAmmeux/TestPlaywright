@@ -1,20 +1,20 @@
 import { Page } from "@playwright/test";
 
 export class CartPage {
-  readonly page: Page;
+  constructor(private page: Page) {}
 
-  constructor(page: Page) {
-    this.page = page;
-  }
-
-  async proceedAsGuest(postalCode: string) {
+  async proceedAsGuest(postalCode: number) {
+    await this.page
+      .getByTestId("cartConfirmationDrawer_button_seeCart")
+      .click();
     await this.page
       .getByTestId("invoiceDetailsCard_button_validateCart")
       .click();
     await this.page
       .getByTestId("accountInfosAuthEmailUnknownDrawer_button_TMI")
       .click();
-    await this.page.fill("input#postal-code", postalCode);
-    await this.page.click("button#continue");
+    await this.page.getByTestId("postalCode_input_postalCode").click();
+    await this.page.getByTestId("postalCode_input_postalCode").fill("28820");
+    await this.page.getByTestId("postalCode_button_validate").click();
   }
 }

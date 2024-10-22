@@ -1,18 +1,17 @@
 import { Page } from "@playwright/test";
 
 export class HomePage {
-  readonly page: Page;
+  constructor(private page: Page) {}
 
-  constructor(page: Page) {
-    this.page = page;
+  async acceptCookies(acceptCookiesButton: string) {
+    await this.page
+      .getByRole("button", { name: acceptCookiesButton, exact: true })
+      .click();
   }
 
-  async acceptCookies() {
-    await this.page.click("button#accept-cookies");
-  }
-
-  async searchForItem(keyword: string) {
-    await this.page.fill("input#search-input", keyword);
-    await this.page.press("input#search-input", "Enter");
+  async searchForItem(searchKeyword: string, searchPlaceholder: string) {
+    await this.page.getByPlaceholder(searchPlaceholder).click();
+    await this.page.getByPlaceholder(searchPlaceholder).fill(searchKeyword);
+    await this.page.getByPlaceholder(searchPlaceholder).press("Enter");
   }
 }

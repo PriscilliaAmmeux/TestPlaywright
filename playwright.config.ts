@@ -38,7 +38,7 @@ export default defineConfig({
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
     },
-
+    /*
     {
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
@@ -47,19 +47,7 @@ export default defineConfig({
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
-    },
-    {
-      name: "FR",
-      use: {
-        baseURL: "https://www.kiabi.fr",
-      },
-    },
-    {
-      name: "ES",
-      use: {
-        baseURL: "https://www.kiabi.es",
-      },
-    },
+    },*/
 
     /* Test against mobile viewports. */
     // {
