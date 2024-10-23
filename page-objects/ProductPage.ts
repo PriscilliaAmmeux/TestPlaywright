@@ -5,11 +5,10 @@ export class ProductPage {
   constructor(private page: Page) {}
 
   async closePopupIfPresent() {
-    const popupCloseButton = this.page.locator(
-      'div[aria-label="Close dialog"]'
-    );
-    if (await popupCloseButton.isVisible()) {
-      await popupCloseButton.click();
+    const popup = this.page.locator("selector-for-popup");
+
+    if (await popup.isVisible()) {
+      await this.page.getByRole("button", { name: "Close dialog" }).click();
     }
   }
 
