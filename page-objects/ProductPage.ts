@@ -1,14 +1,22 @@
 import { Page } from "@playwright/test";
+import { PageUtils } from "./UtilsPage";
 
 export class ProductPage {
   constructor(private page: Page) {}
 
-  async selectSize(size: string) {
-    await this.page.getByTestId("productSizes_button_selectSize").click();
-    await this.page.getByTestId("productSizes_selectSize_L").click();
+  async closePopupIfPresent() {
+    const popup = this.page.locator("selector-for-popup");
+
+    if (await popup.isVisible()) {
+      await this.page.getByRole("button", { name: "Close dialog" }).click();
+    }
+  }
+
+  async selectSize() {
+    await PageUtils.selectProductSize(this.page);
   }
 
   async addToCart() {
-    await this.page.getByTestId("productInformation_button_addToCart").click();
+    await PageUtils.addToCart(this.page);
   }
 }
