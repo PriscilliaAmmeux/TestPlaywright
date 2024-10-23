@@ -17,11 +17,18 @@ async function runTestForEnvironment(page, data) {
   await homePage.searchForItem(
     data.searchKeyword,
     data.searchPlaceholder,
-    data.itemName
+    data.itemName1
   );
-  await productPage.selectSize(data.size);
+  await productPage.selectSize();
   await productPage.addToCart();
-  await cartPage.proceedAsGuest(data.postalCode);
+  await cartPage.proceedAsGuest(
+    data.postalCode,
+    data.subtotal,
+    data.deliveryCost,
+    data.totalEstimated,
+    data.itemName2,
+    data.returnShopping
+  );
   await deliveryPage.selectHomeDelivery();
 }
 

@@ -2,22 +2,26 @@
   "FR": {
     "url": "https://www.kiabi.fr",
     "searchKeyword": "robe",
-    "itemName": "1/3 Robe courte en plumetis",
-
+    "itemName1": "1/3 Robe courte en plumetis",
+    "itemName2": "Robe courte en plumetis Kaki",
     "acceptCookiesButton": "Accepter",
-    "searchPlaceholder": "Recherchez un article"
+    "searchPlaceholder": "Recherchez un article",
+    "postalCode": "28820",
+    "subtotal": "Sous-total Kiabi",
+    "deliveryCost": "Frais de livraison estimés",
+    "totalEstimated": "Total estimé",
+    "returnShopping": "Continuer mon shopping"
   },
   "ES": {
     "url": "https://www.kiabi.es",
     "searchKeyword": "vestido",
-    "itemName": "1/3 Vestido tipo jersey",
-    "size": "L",
-    "postalCode": "28820",
+    "itemName1": "1/3 Vestido cruzado con",
+    "itemName2": "Vestido cruzado con estampado",
     "acceptCookiesButton": "Aceptar",
-    "searchPlaceholder": "Buscar una referencia"
-  },
-  "shared": {
-    "size": "L",
-    "postalCode": "28820"
+    "searchPlaceholder": "Buscar una referencia",
+    "postalCode": "28820",
+    "subtotal": "Subtotal Kiabi",
+    "deliveryCost": "Gastos de envío estimados",
+    "totalEstimated": "Total"
   }
 }

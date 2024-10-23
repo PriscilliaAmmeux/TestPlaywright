@@ -12,11 +12,11 @@ export class HomePage {
   async searchForItem(
     searchKeyword: string,
     searchPlaceholder: string,
-    itemName: string
+    itemName1: string
   ) {
     await this.page.getByPlaceholder(searchPlaceholder).click();
     await this.page.getByPlaceholder(searchPlaceholder).fill(searchKeyword);
     await this.page.getByPlaceholder(searchPlaceholder).press("Enter");
-    await this.page.getByRole("link", { name: itemName }).click();
+    await this.page.getByRole("link", { name: itemName1 }).click();
   }
 }
