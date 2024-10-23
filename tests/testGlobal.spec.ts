@@ -13,22 +13,25 @@ async function runTestForEnvironment(page, data) {
   const deliveryPage = new DeliveryPage(page);
 
   await page.goto(data.url);
+
   await homePage.acceptCookies(data.acceptCookiesButton);
   await homePage.searchForItem(
     data.searchKeyword,
     data.searchPlaceholder,
     data.itemName1
   );
+
   await productPage.selectSize();
   await productPage.addToCart();
-  await cartPage.proceedAsGuest(
-    data.postalCode,
+
+  await cartPage.modifyCart(data.itemName2, data.returnShopping);
+  await cartPage.checkCartSummary(
     data.subtotal,
     data.deliveryCost,
-    data.totalEstimated,
-    data.itemName2,
-    data.returnShopping
+    data.totalEstimated
   );
+
+  await deliveryPage.proceedAsGuest(data.postalCode);
   await deliveryPage.selectHomeDelivery();
 }
 

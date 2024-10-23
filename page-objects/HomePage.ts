@@ -16,7 +16,9 @@ export class HomePage {
   ) {
     await this.page.getByPlaceholder(searchPlaceholder).click();
     await this.page.getByPlaceholder(searchPlaceholder).fill(searchKeyword);
-    await this.page.getByPlaceholder(searchPlaceholder).press("Enter");
+      await this.page.getByPlaceholder(searchPlaceholder).press("Enter");
+      
+      //check that the user can select the first item
     await this.page.getByRole("link", { name: itemName1 }).click();
   }
 }
