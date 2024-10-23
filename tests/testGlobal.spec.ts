@@ -21,6 +21,7 @@ async function runTestForEnvironment(page, data) {
     data.itemName1
   );
 
+  await productPage.closePopupIfPresent();
   await productPage.selectSize();
   await productPage.addToCart();
 
